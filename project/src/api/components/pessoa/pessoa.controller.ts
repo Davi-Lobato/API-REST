@@ -30,7 +30,7 @@ export class PessoaController{
         const pessoa = await AppDataSource.manager.findOneBy(Pessoa, { id:cod });
         
         if (pessoa == null){
-            return res.status(404).json{{erro: 'Pessoa não encontrada!' }};
+            return res.status(404).json({erro: 'Pessoa não encontrada!' });
         }
 
         let { cpf, data_nascimento, data_efetivacao, idade, salario} = req.body;
